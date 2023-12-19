@@ -2,4 +2,7 @@
 
 <p><%= @post.content %></p>
 
+<% if current_user.username == @post.user.username%>
+    <li><%= link_to "Edit", edit_post_path(@post) %></li>
+<% end %>
 <p>Author: <%= @post.user.username%> </p>
