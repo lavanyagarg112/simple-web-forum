@@ -20,4 +20,18 @@
     border: 1px solid #ddd;
     border-radius: 5px;
   }
+
+  /* app/assets/stylesheets/application.css */
+.comment {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 1px solid #ddd; /* Optional: adds a visual line for clarity */
+  }
+  
+  .nested-comments .comment {
+    margin-left: 20px; /* Adjust as needed for the desired level of indentation */
+    padding-left: 10px;
+    border-left: 1px solid #ddd; /* Optional */
+  }
+  
   

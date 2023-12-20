@@ -23,5 +23,8 @@
   </div>
 
   <!-- Render replies (if any) -->
-  <%= render partial: "comments/comment", collection: comment.replies, as: :comment %>
+  <div class="nested-comments">
+    <%= render partial: "comments/comment", collection: comment.replies, as: :comment %>
+  </div>
+
 </div>
