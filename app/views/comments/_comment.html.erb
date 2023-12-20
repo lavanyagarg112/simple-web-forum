@@ -6,11 +6,22 @@
   </p>
   <p><%= comment.content %></p>
 
-  <%= link_to "Reply", '#', data: { toggle: "reply-form-#{comment.id}" } %>
+  <%= link_to "Reply", "#reply-form-#{comment.id}", class: "reply-link" %>
 
-  <div id="reply-form-<%= comment.id %>" style="display:none;">
-    <%= render partial: 'comments/form', locals: { comment: comment } %>
+  <div id="reply-form-<%= comment.id %>" class="reply-form" style="display: none;">
+    <%= form_with(model: [ @post, Comment.new ], local: true) do |form| %>
+      <%= form.hidden_field :parent_id, value: comment.id %>
+
+      <p>
+        <%= form.label :content, "Your Reply" %><br>
+        <%= form.text_area :content %>
+      </p>
+      <p>
+        <%= form.submit "Post Reply" %>
+      </p>
+    <% end %>
   </div>
 
+  <!-- Render replies (if any) -->
   <%= render partial: "comments/comment", collection: comment.replies, as: :comment %>
 </div>
