@@ -1,9 +1,16 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.user.username %>
-</p>
+<!-- app/views/comments/_comment.html.erb -->
+<div class="comment">
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.user.username %>
+  </p>
+  <p><%= comment.content %></p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.content %>
-</p>
+  <%= link_to "Reply", '#', data: { toggle: "reply-form-#{comment.id}" } %>
+
+  <div id="reply-form-<%= comment.id %>" style="display:none;">
+    <%= render partial: 'comments/form', locals: { comment: comment } %>
+  </div>
+
+  <%= render partial: "comments/comment", collection: comment.replies, as: :comment %>
+</div>

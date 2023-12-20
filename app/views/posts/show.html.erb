@@ -11,8 +11,14 @@
 <% end %>
 <p>Author: <%= @post.user.username%> </p>
 
-<h2>Comments</h2>
-<%= render @post.comments %>
 
+<!-- Displaying comments -->
+<% @post.comments.where(parent_id: nil).each do |comment| %>
+  <%= render partial: "comments/comment", locals: { comment: comment } %>
+<% end %>
+
+<!-- Form for new top-level comment -->
 <h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<%= render partial: 'comments/form', locals: { comment: nil } %>
+
+

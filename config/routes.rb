@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create, :destroy] do
+      # If you want to enable creating replies through a nested route
+      resources :replies, only: [:new, :create], controller: 'comments'
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "posts#index"
