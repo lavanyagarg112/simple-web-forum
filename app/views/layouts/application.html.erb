@@ -5,31 +5,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-
   </head>
 
   <body>
     <%= yield %>
+
+    <!-- React root element -->
+    <div id="root"></div>
+
+    <%= javascript_importmap_tags %>
+    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+
     <script type="text/javascript">
       document.addEventListener('turbo:load', function() {
-      document.body.addEventListener('click', function(event) {
-        if (event.target.matches('.reply-link')) {
-          event.preventDefault();
-          var replyFormId = event.target.getAttribute('href');
-          var replyForm = document.querySelector(replyFormId);
-          if (replyForm) {
-            replyForm.style.display = 'block';
+        document.body.addEventListener('click', function(event) {
+          if (event.target.matches('.reply-link')) {
+            event.preventDefault();
+            var replyFormId = event.target.getAttribute('href');
+            var replyForm = document.querySelector(replyFormId);
+            if (replyForm) {
+              replyForm.style.display = 'block';
+            }
           }
-        }
+        });
       });
-    });
-
     </script>
-
   </body>
 </html>
-
-
