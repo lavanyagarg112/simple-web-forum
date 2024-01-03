@@ -6,16 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
   </head>
 
   <body>
+    <!-- React root element -->
+      <div id="root"></div>
+
     <%= yield %>
 
-    <!-- React root element -->
-    <div id="root"></div>
-
-    <%= javascript_importmap_tags %>
-    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
 
     <script type="text/javascript">
       document.addEventListener('turbo:load', function() {

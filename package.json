@@ -3,7 +3,7 @@
     "@hotwired/stimulus": "^3.2.2",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
-    "react": "^17.0.0",
+    "react": "^18.2.0",
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
