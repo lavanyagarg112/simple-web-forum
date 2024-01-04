@@ -10,7 +10,15 @@ const App: () => React.JSX.Element = () => (
   </div>
 );
 
-document.addEventListener('DOMContentLoaded', loadReact);
+document.addEventListener('turbolinks:before-cache', () => {
+  const reactElement = document.getElementById('react-element');
+  if (reactElement) {
+    ReactDOM.unmountComponentAtNode(reactElement);
+  }
+});
+
+
+// document.addEventListener('DOMContentLoaded', loadReact);
 document.addEventListener('turbolinks:load', loadReact);
 
 
