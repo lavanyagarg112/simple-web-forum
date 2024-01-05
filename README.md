@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Introduction
 
-Things you may want to cover:
+Welcome to the repository for the Web Forum Project, a Rails-based application designed to provide a user-friendly platform for engaging discussions. This forum allows users to sign up, create posts, comment on discussions, and much more.
 
-* Ruby version
+Features
 
-* System dependencies
+User Authentication: Secure sign-in functionality with Devise for enhanced security.
 
-* Configuration
+CRUD Operations: Users can create, read, update, and delete posts and comments, using intuitive interfaces for seamless navigation and content management.
 
-* Database creation
+Technology Stack
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Backend: Ruby on Rails
+Frontend: React with Typescript
+Database: SQLite3
+Authentication: Devise
