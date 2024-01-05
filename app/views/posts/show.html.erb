@@ -1,4 +1,6 @@
 <h1><%= @post.title %></h1>
+<%= react_component("Header", { title: @post.title }) %>
+
 
 <p><%= @post.content %></p>
 
@@ -8,6 +10,7 @@
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>
+    
 <% end %>
 <p>Author: <%= @post.user.username%> </p>
 
