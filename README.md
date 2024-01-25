@@ -1,5 +1,13 @@
 # README
 
+## Important Note
+
+You can find the actual implementation of my code here -
+
+[Thread Talk Repository](https://github.com/lavanyagarg112/threadtalk)
+
+The reason for this is given in the [Moving Forward](#moving-forward) section.
+
 ## Introduction
 
 Welcome to the repository for the Web Forum Project, a Rails-based application designed to provide a user-friendly platform for engaging discussions. This forum allows users to sign up, create posts, comment on discussions, and much more.
